@@ -1,0 +1,294 @@
+:root {
+   --mobile: 375px;
+   --desktop: 1440px;
+
+   /* Colors */
+
+        /* Primary */
+        --linear-gradient: hsl(249, 99%, 64%), hsl(278, 94%, 30%);
+        --Red: hsl(0, 100%, 66%);
+
+        /* Neutral */
+        --White: hsl(0, 0%, 100%);
+        --Lightgrayish-violet: hsl(270, 3%, 87%);
+        --Darkgrayish-violet: hsl(279, 6%, 55%);
+        --Verydark-violet: hsl(278, 68%, 11%);
+
+    /* Font */
+    --Font:'Space Grotesk', sans-serif;
+
+    /* Font-size */
+    --Font-size: 18px;
+    --Font-weight: 500;
+
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--Font);
+    font-size: var(--Font-size);
+    font-weight: var(--Font-weight);
+    color: var(--Darkgrayish-violet);
+}
+
+/* Mobile */
+@media (max-width: 375px) {
+    :root {
+        --Font-size: 15px;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+/* Desktop */
+
+.container {
+    max-width: auto;
+    height: auto;
+    position: relative;
+    flex-direction: column;
+    display: flex;
+}
+
+.background{
+    width: 480px;
+    height: 100%;
+    flex-basis: 30%;
+    /* background-image: linear-gradient(var(--linear-gradient)); */
+}
+
+/******Debit Cards******/
+
+ /* Front Card */
+.card-front-container {
+    position: absolute;
+    width: 447px;
+    height: 245px;
+    flex-shrink: 0;
+    left: 170px;
+    top: 180px;
+}
+
+.card-number-default, .card-name-default, .card-expiry-default {
+    position: absolute;
+    color: var(--White);
+    opacity: 0.5;
+    width: max-content;
+}
+
+.card-number-default {
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px;
+}
+
+.card-name-default {
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-95%);
+    font-size: 18px;
+}
+
+.card-expiry-default {
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(160%);
+    font-size: 18px;
+}
+
+.card-logo {
+    position: absolute;
+    top: 20px;
+    left: 22%;
+    transform: translateX(-50%);
+}
+
+/* Back Card */
+
+.card-back-container {
+    position: absolute;
+    width: 447px;
+    height: 245px;
+    flex-shrink: 0;
+    left: 300px;
+    top: 450px;
+}
+
+.card-cvc-default {
+    position: absolute;
+    color: var(--White);
+    opacity: 0.5;
+    width: max-content;
+    bottom: 110px;
+    left: 75%;
+    transform: translateX(50%);
+    font-size: 18px;
+}
+
+
+/***** User Form ******/
+
+.user-form-container {
+    margin: auto;
+    max-width: 400px;
+    height: 350px;
+    /* flex-basis: 50%; */
+    position: absolute;
+    left: 60%;
+    top: 10%;
+    transform: translateX(110%);
+    transform: translateY(50%);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid var(--Lightgrayish-violet);
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--Darkgrayish-violet);
+    margin-bottom: 30px;
+}
+
+.input-control input:focus {
+    outline: 0;
+}
+
+.input-control.success input {
+    border-color: #09c372;
+}
+
+.input-control.error input {
+    border-color: #ff3860;
+}
+
+.input-control .error {
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
+
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--Verydark-violet);
+    margin-bottom: 5px;
+}
+
+.card-name-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-number-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-security-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.experation-date{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.cvc {
+    display: flex;
+    flex-direction: column;
+}
+
+.cvc-input {
+    display: flex;
+    flex-direction: row;
+}
+
+#month, #year {
+    width: 100px;
+}
+
+#cvc {
+    width: 150px;
+}
+
+button {
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--Verydark-violet);
+    color: var(--White);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+@media (max-width: 1400px) {
+
+    .card-front-container {
+        width: 385px;
+    }
+
+    .bg-card-front {
+        width: 385px;
+    }
+
+    .card-back-container {
+        width: 385px;
+    }
+
+    .bg-card-back {
+        width: 385px;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-front-container {
+        position: none;
+    }
+
+    .bg-card-front {
+        position: none;
+    }
+
+    .card-back-container {
+        position: none;
+    }
+
+    .bg-card-back {
+        position: none;
+    }
+}
